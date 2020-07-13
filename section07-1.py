@@ -46,4 +46,55 @@ print(id(user2))
 print(user1.__dict__) # 네임스페이스 출력
 print(user2.__dict__)
 
+# 예제2
+# self의 이해
 
+class SelfTest: # 괄호가 있어도 되고 없어도 된다.
+    def function1(self):
+        print('function1 called!')
+    def function2(self):
+        print(id(self))
+        print('function1 called!')
+
+self_test = SelfTest()
+# self_test.funtion1()
+self_test.function1()
+self_test.function2()
+
+print(id(self_test))
+SelfTest.function2(self_test)
+
+# 예제3
+# 클래스 변수, 인스턴스 변수
+
+class WareHouse:
+    # 클래스 변수
+    stock_num = 0
+    def __init__(self, name):
+        self.name = name
+        WareHouse.stock_num += 1
+    def __del__(self):
+        WareHouse.stock_num -= 1
+
+
+user1 = WareHouse('Kim')
+user2 = WareHouse('Park')
+user3 = WareHouse('lee')
+
+print(user1.__dict__)
+print(user2.__dict__)
+print(user3.__dict__)
+print(WareHouse.__dict__) # 클래스 네임스페이스, 클래스 변수(공유)
+
+print(user1.name)
+print(user2.name)
+print(user3.name)
+
+print(user1.stock_num)
+print(user2.stock_num)
+print(user3.stock_num)
+
+del user1
+
+print(user2.stock_num)
+print(user3.stock_num)
