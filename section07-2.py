@@ -8,7 +8,7 @@
 
 # 라면 -> 속성(종류, 회사, 맛, 면 종류, 이름) : 부모
 
-class Car:
+class Car: # 부모 클래스를 만들고
     """Parent Class"""
     def __init__(self, tp, color):
         self.type = tp
@@ -18,13 +18,13 @@ class Car:
         return 'Car Class "Show Method!"'
 
 
-class BmwCar(Car): # 위에서 만든 클래스를 새로운 클래스에 넣으면 상속 받게 된다.
+class BmwCar(Car): # 위에서 부모 클래스를 새로운 클래스 매개변수에 넣으면 상속 받게 된다.
     """Sub Class"""
     def __init__(self, car_name, tp, color):
         super().__init__(tp, color)
         self.car_name = car_name
     
-    def show_model(self) -> None:
+    def show_model(self):
         return "Your Car Name : %s" % self.car_name
 
 
