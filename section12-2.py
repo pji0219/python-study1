@@ -23,7 +23,7 @@ c.execute("SELECT *FROM users")
 
 # 지정 로우 선택
 #print("Three -> \n", c.fetchmany(size=3))
-# 여러개 데이터 선택, 3개를 선택 했기에 3개 출력
+# 3개를 선택 했기에 3개 출력
 
 # 전체 로우 선택
 #print('ALL -> \n', c.fetchall())
