@@ -52,7 +52,7 @@ c.execute("INSERT INTO users VALUES(1, 'kim', 'kim@naver.com', '010-0000-1234', 
 # 코드가 너무 길어져서 아래 줄에 개행 하기 위해 \를 사용하였다.
 
 # 예제2
-c.execute("INSERT INTO users(id, username, email, phone, website, regdate) VALUES (?,?,?,?,?,?\
+c.execute("INSERT INTO users(id, username, email, phone, website, regdate) VALUES(?,?,?,?,?,?\
 )", (2, 'Park', 'Park@daum.net', '010-1111-1111', 'Park.com', nowDatetime,))
 # SQL문에 직접 데이터 목록을 써주고 뒤에 데이터 갯수대로 ?를 주고 매개 변수로 데이터를 삽입해줘도 된다.
 # 코드가 너무 길어져서 아래 줄에 개행 하기 위해 \를 사용하였다.
@@ -65,7 +65,7 @@ userList = (
 )
 # 튜플 안의 튜플로 여러 데이터를 저장한다.
 
-c.executemany("INSERT INTO users(id, username, email, phone, website, regdate)VALUES(?,?,?,?,?,?)", userList)
+c.executemany("INSERT INTO users(id, username, email, phone, website, regdate) VALUES(?,?,?,?,?,?)", userList)
 # executemany명령어로 여러개의 데이터를 한꺼번에 삽입 할 수 있다.
 
 # 테이블 데이터 삭제
